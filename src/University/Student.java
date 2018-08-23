@@ -1,33 +1,25 @@
 package University;
 
-import Entities.Gender;
-import Entities.PresentState;
-import Entities.UniversityPerson;
+import Enums.Gender;
 import Interfaces.Learner;
 import java.util.Random;
 
 public class Student extends UniversityPerson implements Learner {
-    private int knowladgeEstimation;
 
     public Student(String firstName, String lastName, int age, Gender gender) {
         super(firstName, lastName, age, gender);
 
-        knowladgeEstimation = new Random()
-                .nextInt(100);
+        knowladgeEstimation = new Random().nextInt(100);
     }
+    private int knowladgeEstimation;
 
     public int getKnowladgeEstimation() {
         return knowladgeEstimation;
     }
 
     @Override
-    public String isPresentToday() {
-        return (new Random()
-                .nextBoolean()
-                ? PresentState.PRESENT
-                : PresentState.ABSENT)
-                .name()
-                .toLowerCase();
+    public boolean isPresentToday() {
+        return new Random().nextBoolean();
     }
 
     @Override
@@ -36,16 +28,13 @@ public class Student extends UniversityPerson implements Learner {
         studentInfo
                 .append("First name: ")
                 .append(getFirstName())
-                .append("\n")
-                .append("Last name: ")
+                .append("\nLast name: ")
                 .append(getLastName())
-                .append("\n")
-                .append("Gender is: ")
+                .append("\nGender is: ")
                 .append(getGender())
-                .append("\n")
-                .append("Age is: ")
+                .append("\nAge is: ")
                 .append(getAge())
-                .append("Knowladge estimation: ")
+                .append("\nKnowladge estimation: ")
                 .append(getKnowladgeEstimation());
 
         System.out.println(studentInfo.toString());

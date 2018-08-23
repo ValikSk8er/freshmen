@@ -1,6 +1,9 @@
-package Entities;
+package University;
 
-public abstract class UniversityPerson {
+import Enums.Gender;
+import Interfaces.Person;
+
+public abstract class UniversityPerson implements Person {
     private String firstName;
     private String lastName;
     private int age;

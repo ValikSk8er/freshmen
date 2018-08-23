@@ -9,6 +9,14 @@ public class Group {
     private List<Student> students;
     private Student groupPresident;
 
+    public String getGroupName() {
+        return groupName;
+    }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
     public Group(String groupName, List<Student> students){
         this.groupName = groupName;
         this.students = students;
@@ -25,6 +33,17 @@ public class Group {
                 groupPresident = student;
             }
         }
+        showGroupPresident();
+    }
+
+    public void showGroupPresident(){
+        if(groupPresident == null){
+            throw new NullPointerException("Group president is not chosen");
+        }
+        System.out.println(new StringBuilder()
+                .append("Group's ")
+                .append(groupName)
+                .append(" president is:"));
         groupPresident.showInfo();
     }
 }

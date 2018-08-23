@@ -1,6 +1,5 @@
 package Interfaces;
 
-public interface Learner {
-    String isPresentToday();
-    void showInfo();
+public interface Learner extends Person {
+    boolean isPresentToday();
 }
