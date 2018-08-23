@@ -44,7 +44,7 @@ public class Professor extends UniversityPerson implements Teacher {
 
         for(Student student : group.getStudents()){
             if(student.isPresentToday()){
-                isAbsentNumber++;
+                isPresentNumber++;
             }
             else{
                 isAbsentNumber++;
@@ -69,7 +69,7 @@ public class Professor extends UniversityPerson implements Teacher {
                     .append(student.getFirstName())
                     .append(" are you here?")
                     .toString());
-            System.out.println(student.isPresentToday() ? " Yes" : " No");
+            System.out.println(student.isPresentToday() ? " Yes" : " Is absent");
         }
     }
 }

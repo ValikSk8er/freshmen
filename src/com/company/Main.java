@@ -24,10 +24,15 @@ public class Main {
 
         Group javaGroup = new Group("JavaCource-18", students);
         javaGroup.chooseGroupPresident();
+        System.out.println();
 
         professorEvgen.setGroup(javaGroup);
         professorEvgen.showInfo();
+        System.out.println();
+
         professorEvgen.checkStudentsVisits();
+        System.out.println();
+
         professorEvgen.startRollCall();
     }
 }
