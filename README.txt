@@ -1,8 +1,3 @@
-The project are separate to four packages:
-    - src/com.company (main console app)
-    - src/University (main university entities with functionalities)
-    - src/Interfaces
-    - src/Enums
-    
-For check main result just to run console app.
-    
+For using main functionality use just two steps:
+ 1. Create the 'University' entity by 'UniversityBuilder' - need to add a number of groups, professors and students
+ 2. Use the created 'University' object to get 'Group'/'Professor'/'Student' entities and using their functionality.

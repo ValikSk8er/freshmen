@@ -1,10 +1,10 @@
-package University;
+package Entities;
 
 import Enums.Gender;
 import Interfaces.Learner;
 import java.util.Random;
 
-public class Student extends UniversityPerson implements Learner {
+public class Student extends AbstractPerson implements Learner {
 
     public Student(String firstName, String lastName, int age, Gender gender) {
         super(firstName, lastName, age, gender);
@@ -38,5 +38,6 @@ public class Student extends UniversityPerson implements Learner {
                 .append(getKnowladgeEstimation());
 
         System.out.println(studentInfo.toString());
+        System.out.println("++++++++++++++++++++");
     }
 }
