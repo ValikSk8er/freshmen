@@ -1,15 +1,16 @@
-package University;
+package Entities;
 
 import Enums.Gender;
 import Interfaces.Person;
 
-public abstract class UniversityPerson implements Person {
+public abstract class AbstractPerson implements Person {
     private String firstName;
     private String lastName;
-    private int age;
     private Gender gender;
+    private int age;
 
-    public UniversityPerson(String firstName, String lastName, int age, Gender gender){
+
+    public AbstractPerson(String firstName, String lastName, int age, Gender gender){
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -19,11 +20,7 @@ public abstract class UniversityPerson implements Person {
         return firstName;
     }
 
-    public String getGender() {
-        return gender
-                .name()
-                .toLowerCase();
-    }
+    public String getGender() { return gender.name().toLowerCase(); }
 
     public String getLastName() {
         return lastName;

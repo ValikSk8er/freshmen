@@ -1,36 +1,18 @@
-package University;
+package Entities;
 
 import Enums.Gender;
 import Interfaces.Teacher;
 
-public class Professor extends UniversityPerson implements Teacher {
+public class Professor extends AbstractPerson implements Teacher {
 
     private Group group;
 
     public Professor(String firstName, String lastName, int age, Gender gender) {
         super(firstName, lastName, age, gender);
-
     }
 
     public void setGroup(Group group) {
         this.group = group;
-    }
-
-    public void showInfo(){
-        StringBuilder professorInfo = new StringBuilder();
-        professorInfo
-                .append("First name: ")
-                .append(getFirstName())
-                .append("\nLast name: ")
-                .append(getLastName())
-                .append("\nGender is: ")
-                .append(getGender())
-                .append("\nAge is: ")
-                .append(getAge())
-                .append("\nIs professor for group: ")
-                .append(group.getGroupName());
-
-        System.out.println(professorInfo.toString());
     }
 
     @Override
@@ -56,8 +38,10 @@ public class Professor extends UniversityPerson implements Teacher {
                 .append("\nStudents are absent today: ")
                 .append(isAbsentNumber)
                 .toString());
+        System.out.println("++++++++++++++++++++");
     }
 
+    //Перекличка
     @Override
     public void startRollCall() {
         if(group == null){
@@ -71,5 +55,24 @@ public class Professor extends UniversityPerson implements Teacher {
                     .toString());
             System.out.println(student.isPresentToday() ? " Yes" : " Is absent");
         }
+        System.out.println("++++++++++++++++++++");
+    }
+
+    public void showInfo(){
+        StringBuilder professorInfo = new StringBuilder();
+        professorInfo
+                .append("First name: ")
+                .append(getFirstName())
+                .append("\nLast name: ")
+                .append(getLastName())
+                .append("\nGender is: ")
+                .append(getGender())
+                .append("\nAge is: ")
+                .append(getAge())
+                .append("\nIs professor for group: ")
+                .append(group.getGroupName());
+
+        System.out.println(professorInfo.toString());
+        System.out.println("++++++++++++++++++++");
     }
 }
