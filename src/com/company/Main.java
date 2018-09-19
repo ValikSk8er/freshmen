@@ -6,8 +6,12 @@ import Entities.University;
 public class Main {
 
     public static void main(String[] args) {
-
-        University kpi = UniversityBuilder.getUniversity(4, 5, 21);
+        
+        int groupsNumber = 21;
+        int professorsNumber = 12;
+        int studentsNumber = 86;
+        
+        University kpi = UniversityBuilder.getUniversity(groupsNumber, professorsNumber, studentsNumber);
 
         kpi.getRandomGroup()
                 .chooseGroupPresident();
